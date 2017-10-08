@@ -75,7 +75,7 @@ function getArrayFromImage(img){
 }
 
 
-let images = ['pickle.svg','rick1.svg','img/close.svg'];
+let images = ['img/pickle.svg','img/rick1.svg','img/close.svg'];
 loadImages(images,function(loadedImages){
 	var gallery = [];
 	loadedImages.forEach(function(el,index){
@@ -112,7 +112,7 @@ loadImages(images,function(loadedImages){
 
 
 		// ЧТО ЕСТЬ НА СЦЕНЕ
-		var texture = (new THREE.TextureLoader).load("rick.png");
+		var texture = (new THREE.TextureLoader).load("img/rick.png");
 		var material = new THREE.PointCloudMaterial({
 		  size: 20,
 		  // vertexColors: THREE.VertexColors,
