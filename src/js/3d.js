@@ -2,6 +2,7 @@ import * as THREE from 'three';
 var OrbitControls = require('three-orbit-controls')(THREE)
 
 import Perlin from './lib/perlin';
+import {TimelineMax} from 'gsap';
 
 
 
@@ -80,7 +81,7 @@ loadImages(images,function(loadedImages){
 	loadedImages.forEach(function(el,index){
 		gallery.push(getArrayFromImage(loadedImages[index]));
 	});
-	console.log(gallery);
+	
 
 	var camera, controls, scene, renderer,geometry;
 
@@ -93,7 +94,7 @@ loadImages(images,function(loadedImages){
 
 		renderer = new THREE.WebGLRenderer();
 		renderer.setPixelRatio( window.devicePixelRatio );
-		renderer.setSize( window.innerWidth, window.innerHeight );
+		renderer.setSize( window.innerWidth/2, window.innerWidth/2 );
 
 		var container = document.getElementById( 'container' );
 		container.appendChild( renderer.domElement );
@@ -137,7 +138,7 @@ loadImages(images,function(loadedImages){
 
 		scene.add(pointCloud);
 
-		console.log(geometry.colors[0]);
+
 		// Конец сцены
 
 		window.addEventListener( 'resize', onWindowResize, false );
@@ -147,7 +148,7 @@ loadImages(images,function(loadedImages){
 	function onWindowResize() {
 		camera.aspect = window.innerWidth / window.innerHeight;
 		camera.updateProjectionMatrix();
-		renderer.setSize( window.innerWidth, window.innerHeight );
+		renderer.setSize( window.innerWidth/2, window.innerWidth/2 );
 	}
 
 	
