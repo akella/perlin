@@ -18,7 +18,7 @@ import Perlin from './lib/perlin';
 
 
 		for (var i = 0; i < size; i++) {
-			ctx.fillRect(i,0,1,200*Perlin(i/100,time/100,0))
+			ctx.fillRect(i,0,1,500*Perlin(i/150,time/100,0))
 
 		}
 
